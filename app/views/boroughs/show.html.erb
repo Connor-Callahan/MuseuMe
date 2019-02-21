@@ -1,0 +1,12 @@
+
+ <h1><%= @borough.name %></h1>
+<div class="borough_show_container">
+  <ul>
+    <% @museums.where(borough_id: @borough.id).each do |museum| %>
+    <li><%= button_to museum.title, museum, method: :get, class: 'index_borough_button'%></li><br>
+    <% end %>
+  </ul>
+  <br>
+</div>
+
+<%= button_to "Back to Home", home_index_path, method: :get, class: 'borough_home_button' %>
