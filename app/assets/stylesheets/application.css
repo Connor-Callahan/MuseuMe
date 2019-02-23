@@ -69,6 +69,9 @@
    transition: background 250ms ease-in-out, transform 150ms ease;
  }
 
+.error_container {
+  margin-top: 3%;
+}
  .show_search_form {
    display: inline-block;
    position: absolute;
