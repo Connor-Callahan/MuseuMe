@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2018_12_05_171038) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "boroughs", force: :cascade do |t|
     t.string "name"
   end
@@ -24,7 +27,7 @@ ActiveRecord::Schema.define(version: 2018_12_05_171038) do
     t.string "url"
     t.string "zip"
     t.string "phone"
-    t.integer "borough_id"
+    t.bigint "borough_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["borough_id"], name: "index_museums_on_borough_id"

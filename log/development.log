@@ -18648,3 +18648,47 @@ Processing by ApplicationController#welcome as HTML
 Completed 200 OK in 527ms (Views: 492.0ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (731.0ms)[0m  [1m[35mCREATE DATABASE "my_database_development" ENCODING = 'utf8'[0m
+  ↳ /Users/connorcallahan/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (551.7ms)[0m  [1m[35mCREATE DATABASE "my_database_test" ENCODING = 'utf8'[0m
+  ↳ /Users/connorcallahan/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (50.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/connorcallahan/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (44.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/connorcallahan/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (17.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5168794849566389475)[0m
+  ↳ /Users/connorcallahan/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (18.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/connorcallahan/.rvm/gems/ruby-2.6.1/bin/rake:23
+Migrating to CreateMuseums (20181203202242)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/connorcallahan/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (36.2ms)[0m  [1m[35mCREATE TABLE "museums" ("id" bigserial primary key, "title" character varying, "address" character varying, "coordinate_x" float, "coordinate_y" float, "url" character varying, "zip" character varying, "phone" character varying, "borough_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181203202242_create_museums.rb:3
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE  INDEX  "index_museums_on_borough_id" ON "museums"  ("borough_id")[0m
+  ↳ db/migrate/20181203202242_create_museums.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (6.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181203202242"]]
+  ↳ /Users/connorcallahan/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/connorcallahan/.rvm/gems/ruby-2.6.1/bin/rake:23
+Migrating to CreateBoroughs (20181205171038)
+  [1m[35m (11.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/connorcallahan/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (61.4ms)[0m  [1m[35mCREATE TABLE "boroughs" ("id" bigserial primary key, "name" character varying)[0m
+  ↳ db/migrate/20181205171038_create_boroughs.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181205171038"]]
+  ↳ /Users/connorcallahan/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/connorcallahan/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/connorcallahan/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/connorcallahan/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (13.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-02-24 19:23:18.569133"], ["updated_at", "2019-02-24 19:23:18.569133"]]
+  ↳ /Users/connorcallahan/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/connorcallahan/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5168794849566389475)[0m
+  ↳ /Users/connorcallahan/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/connorcallahan/.rvm/gems/ruby-2.6.1/bin/rake:23
