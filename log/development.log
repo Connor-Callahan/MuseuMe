@@ -18692,3 +18692,1670 @@ Migrating to CreateBoroughs (20181205171038)
   ↳ /Users/connorcallahan/.rvm/gems/ruby-2.6.1/bin/rake:23
   [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/connorcallahan/.rvm/gems/ruby-2.6.1/bin/rake:23
+Started GET "/" for 127.0.0.1 at 2019-02-24 14:24:03 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/connorcallahan/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+Processing by ApplicationController#welcome as HTML
+  Rendering application/welcome.erb within layouts/application
+  Rendered application/welcome.erb within layouts/application (901.5ms)
+Completed 200 OK in 1823ms (Views: 1763.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/boroughs" for 127.0.0.1 at 2019-02-24 14:24:14 -0500
+Processing by BoroughsController#index as HTML
+  Rendering boroughs/index.html.erb within layouts/application
+  [1m[36mBorough Load (47.3ms)[0m  [1m[34mSELECT "boroughs".* FROM "boroughs"[0m
+  ↳ app/views/boroughs/index.html.erb:4
+  Rendered boroughs/index.html.erb within layouts/application (67.4ms)
+Completed 200 OK in 179ms (Views: 73.3ms | ActiveRecord: 64.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-24 14:24:17 -0500
+Processing by ApplicationController#welcome as HTML
+  Rendering application/welcome.erb within layouts/application
+  Rendered application/welcome.erb within layouts/application (7.3ms)
+Completed 200 OK in 119ms (Views: 116.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/boroughs" for 127.0.0.1 at 2019-02-24 14:24:19 -0500
+Processing by BoroughsController#index as HTML
+  Rendering boroughs/index.html.erb within layouts/application
+  [1m[36mBorough Load (7.6ms)[0m  [1m[34mSELECT "boroughs".* FROM "boroughs"[0m
+  ↳ app/views/boroughs/index.html.erb:4
+  Rendered boroughs/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 137ms (Views: 125.8ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-24 14:24:21 -0500
+Processing by ApplicationController#welcome as HTML
+  Rendering application/welcome.erb within layouts/application
+  Rendered application/welcome.erb within layouts/application (4.7ms)
+Completed 200 OK in 39ms (Views: 35.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/queues" for 127.0.0.1 at 2019-02-24 14:24:27 -0500
+Processing by QueuesController#index as HTML
+  Parameters: {"authenticity_token"=>"vxHaFN0311TWLagoaUA0zTUTf6s1bbAbPujYDRkkKnpPZMTQcOPz8j+3IzaRrRKav5/HNn1bYtgH/AWND52J9A=="}
+  [1m[36mMuseum Load (21.3ms)[0m  [1m[34mSELECT  "museums".* FROM "museums" WHERE "museums"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+Completed 404 Not Found in 129ms (ActiveRecord: 105.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Museum with 'id'=16):
+  
+app/controllers/application_controller.rb:13:in `display_queue'
+app/controllers/queues_controller.rb:10:in `index'
+  [1m[36mMuseum Load (0.5ms)[0m  [1m[34mSELECT  "museums".* FROM "museums" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mBorough Load (0.5ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mBorough Create (28.3ms)[0m  [1m[32mINSERT INTO "boroughs" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "New York"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.4ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Alexander Hamilton U.S. Custom House"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (7.2ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Alexander Hamilton U.S. Custom House"], ["address", "1 Bowling Grn"], ["coordinate_x", -74.01375579519738], ["coordinate_y", 40.703816216918035], ["url", "http://www.oldnycustomhouse.gov/"], ["zip", "10004.0"], ["phone", "(212) 514-3700"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.400830"], ["updated_at", "2019-02-24 19:31:05.400830"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (11.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.3ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Staten Island"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mBorough Create (0.3ms)[0m  [1m[32mINSERT INTO "boroughs" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Staten Island"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.9ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Alice Austen House Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.5ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Alice Austen House Museum"], ["address", "2 Hylan Blvd"], ["coordinate_x", -74.06303178855111], ["coordinate_y", 40.615120837755356], ["url", "http://www.aliceausten.org/"], ["zip", "10305.0"], ["phone", "(718) 816-4506"], ["borough_id", 2], ["created_at", "2019-02-24 19:31:05.432423"], ["updated_at", "2019-02-24 19:31:05.432423"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.3ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.3ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "American Academy of Arts and Letters"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.5ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "American Academy of Arts and Letters"], ["address", "633 W. 155th St."], ["coordinate_x", -73.94729768541572], ["coordinate_y", 40.833853500753314], ["url", "http://www.artsandletters.org/"], ["zip", "10032.0"], ["phone", "(212) 368-5900"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.438799"], ["updated_at", "2019-02-24 19:31:05.438799"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.4ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.3ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (34.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "American Folk Art Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "American Folk Art Museum"], ["address", "45 West 53rd Street"], ["coordinate_x", -73.97810302110001], ["coordinate_y", 40.76162497138548], ["url", "http://www.folkartmuseum.org/"], ["zip", "10019.0"], ["phone", "(212) 265-1040"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.479619"], ["updated_at", "2019-02-24 19:31:05.479619"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.3ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.3ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "American Immigration History Center"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[35m (19.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.3ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "American Museum of Natural History"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.5ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "American Museum of Natural History"], ["address", "Central Park West at 79th Street"], ["coordinate_x", -73.97364816377815], ["coordinate_y", 40.78082623457644], ["url", "http://www.amnh.org/"], ["zip", "10024.0"], ["phone", "(212) 769-5100"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.519914"], ["updated_at", "2019-02-24 19:31:05.519914"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "American Numismatic Society"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "American Numismatic Society"], ["address", "75 Varick St"], ["coordinate_x", -74.00701187920873], ["coordinate_y", 40.72352659262823], ["url", "http://www.numismatics.org/"], ["zip", "10013.0"], ["phone", "(212) 571-4470"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.524863"], ["updated_at", "2019-02-24 19:31:05.524863"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (3.5ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Americas Society"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.4ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Americas Society"], ["address", "680 Park Ave."], ["coordinate_x", -73.96597045258356], ["coordinate_y", 40.76882422895272], ["url", "http://as.americas-society.org/"], ["zip", "10021.0"], ["phone", "(212) 249-8950"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.534176"], ["updated_at", "2019-02-24 19:31:05.534176"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Anne Frank Center USA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Anne Frank Center USA"], ["address", "38 Crosby Street"], ["coordinate_x", -73.99963036903092], ["coordinate_y", 40.721127449476676], ["url", "http://www.annefrank.com/"], ["zip", "10012.0"], ["phone", "(212) 431-7993"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.540317"], ["updated_at", "2019-02-24 19:31:05.540317"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (6.1ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Asia Society"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.9ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Asia Society"], ["address", "725 Park Avenue"], ["coordinate_x", -73.96428395726613], ["coordinate_y", 40.76983378265351], ["url", "http://www.asiasociety.org/"], ["zip", "10021.0"], ["phone", "(212) 288-6400"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.552783"], ["updated_at", "2019-02-24 19:31:05.552783"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Audubon Terrace"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.4ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Audubon Terrace"], ["address", "Broadway at 155 Street"], ["coordinate_x", -73.94654590494326], ["coordinate_y", 40.83358228246046], ["url", "http://www.washington-heights.us/history/archives/audubon_terrace_museum_group_102.html"], ["zip", "10032.0"], ["phone", ""], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.560371"], ["updated_at", "2019-02-24 19:31:05.560371"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Bronx"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mBorough Create (0.3ms)[0m  [1m[32mINSERT INTO "boroughs" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Bronx"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Bartow-Pell Mansion"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.6ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Bartow-Pell Mansion"], ["address", "895 Shore Road"], ["coordinate_x", -73.80557949995756], ["coordinate_y", 40.87177831678272], ["url", "http://bartowpellmansionmuseum.org/index.php"], ["zip", "10464.0"], ["phone", "(718) 885-1461"], ["borough_id", 3], ["created_at", "2019-02-24 19:31:05.571930"], ["updated_at", "2019-02-24 19:31:05.571930"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.4ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Queens"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mBorough Create (0.4ms)[0m  [1m[32mINSERT INTO "boroughs" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Queens"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Bowne House"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.4ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Bowne House"], ["address", "37-01 Bowne Street"], ["coordinate_x", -73.82489046385625], ["coordinate_y", 40.762886331946646], ["url", "http://www.bownehouse.org/"], ["zip", "11354.0"], ["phone", "(718) 359-0528"], ["borough_id", 4], ["created_at", "2019-02-24 19:31:05.584988"], ["updated_at", "2019-02-24 19:31:05.584988"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (35.7ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Bronx"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (1.0ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Bronx Historical Society & Musem"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (7.2ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Bronx Historical Society & Musem"], ["address", "3309 Bainbridge Ave"], ["coordinate_x", -73.87974874003561], ["coordinate_y", 40.87823644134894], ["url", "http://www.bronxhistoricalsociety.org/"], ["zip", "10467.0"], ["phone", "(718) 881-8900"], ["borough_id", 3], ["created_at", "2019-02-24 19:31:05.628325"], ["updated_at", "2019-02-24 19:31:05.628325"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (1.9ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Bronx"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.6ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Bronx Museum of the Arts (BXMA)"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (2.7ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Bronx Museum of the Arts (BXMA)"], ["address", "1040 Grand Concourse"], ["coordinate_x", -73.91975017724828], ["coordinate_y", 40.83102977992849], ["url", "http://www.bronxmuseum.org/"], ["zip", "10456.0"], ["phone", "(718) 681-6000"], ["borough_id", 3], ["created_at", "2019-02-24 19:31:05.645616"], ["updated_at", "2019-02-24 19:31:05.645616"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (1.7ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Brooklyn"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (3.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mBorough Create (0.4ms)[0m  [1m[32mINSERT INTO "boroughs" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Brooklyn"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Brooklyn Children's Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.4ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Brooklyn Children's Museum"], ["address", "145 Brooklyn Avenue"], ["coordinate_x", -73.94401601383748], ["coordinate_y", 40.67450699609931], ["url", "http://www.brooklynkids.org/"], ["zip", "11213.0"], ["phone", "(718) 735-4400"], ["borough_id", 5], ["created_at", "2019-02-24 19:31:05.675243"], ["updated_at", "2019-02-24 19:31:05.675243"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Brooklyn"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.3ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Brooklyn Historical Society"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Brooklyn Historical Society"], ["address", "128 Pierrepont Street"], ["coordinate_x", -73.99240540393131], ["coordinate_y", 40.694802974910445], ["url", "http://www.brooklynhistory.org/default/index.html"], ["zip", "11201.0"], ["phone", "(718) 222-4111"], ["borough_id", 5], ["created_at", "2019-02-24 19:31:05.683192"], ["updated_at", "2019-02-24 19:31:05.683192"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Brooklyn"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Brooklyn Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.4ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Brooklyn Museum"], ["address", "200 Eastern Parkway"], ["coordinate_x", -73.96358506797661], ["coordinate_y", 40.67108321212629], ["url", "http://www.brooklynmuseum.org/"], ["zip", "11238.0"], ["phone", "(718) 638-5000"], ["borough_id", 5], ["created_at", "2019-02-24 19:31:05.688956"], ["updated_at", "2019-02-24 19:31:05.688956"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Chelsea Art Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (1.0ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Chelsea Art Museum"], ["address", "556 West 22nd Street"], ["coordinate_x", -74.00731553374261], ["coordinate_y", 40.74789760206738], ["url", "http://www.chelseaartmuseum.org/"], ["zip", "10011.0"], ["phone", "(212) 255-0719"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.695342"], ["updated_at", "2019-02-24 19:31:05.695342"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Children's Museum of Manhattan"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.4ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Children's Museum of Manhattan"], ["address", "212 West 83rd Street"], ["coordinate_x", -73.97727391968168], ["coordinate_y", 40.78587092106756], ["url", "http://www.cmom.org/"], ["zip", "10024.0"], ["phone", "(212) 721-1234"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.703499"], ["updated_at", "2019-02-24 19:31:05.703499"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Children's Museum of the Arts"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.4ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Children's Museum of the Arts"], ["address", "182 Lafayette Street"], ["coordinate_x", -73.99883836090484], ["coordinate_y", 40.72074946881006], ["url", "http://cmany.org/intro.php?pn=home"], ["zip", "10012.0"], ["phone", "(212) 274-0986"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.710216"], ["updated_at", "2019-02-24 19:31:05.710216"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.3ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Cloisters"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.4ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Cloisters"], ["address", "99 Margaret Corbin Drive"], ["coordinate_x", -73.93173408706043], ["coordinate_y", 40.86492363574811], ["url", "http://www.metmuseum.org/cloisters/"], ["zip", "10040.0"], ["phone", "(212) 923-3700"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.717993"], ["updated_at", "2019-02-24 19:31:05.717993"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Brooklyn"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Coney Island Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.4ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Coney Island Museum"], ["address", "1208 Surf Ave"], ["coordinate_x", -73.97985598415269], ["coordinate_y", 40.57526324252061], ["url", "http://www.coneyisland.com/"], ["zip", "11224.0"], ["phone", "(718) 372-5159"], ["borough_id", 5], ["created_at", "2019-02-24 19:31:05.724645"], ["updated_at", "2019-02-24 19:31:05.724645"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Cooper-Hewitt, National Design Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Cooper-Hewitt, National Design Museum"], ["address", "2 East 91st Street"], ["coordinate_x", -73.95778161975461], ["coordinate_y", 40.78432573993682], ["url", "http://www.cooperhewitt.org/"], ["zip", "10128.0"], ["phone", "(212) 849-8400"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.731968"], ["updated_at", "2019-02-24 19:31:05.731968"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Dahesh Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.4ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Dahesh Museum"], ["address", "580 Madison Avenue"], ["coordinate_x", -73.97304190142106], ["coordinate_y", 40.76210697296256], ["url", "http://www.daheshmuseum.org"], ["zip", "10022.0"], ["phone", "(212) 759-0606"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.738313"], ["updated_at", "2019-02-24 19:31:05.738313"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Dia at the Hispanic Society"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (1.0ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Dia at the Hispanic Society"], ["address", "613 West 155th Street"], ["coordinate_x", -73.94649318169672], ["coordinate_y", 40.83330210970132], ["url", "http://www.diabeacon.org/"], ["zip", "10032.0"], ["phone", "(845) 440-0100"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.744360"], ["updated_at", "2019-02-24 19:31:05.744360"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Dia Art Foundation"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (1.5ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Dia Art Foundation"], ["address", "535 W 22nd Street"], ["coordinate_x", -74.00613537578622], ["coordinate_y", 40.747894926234274], ["url", "http://www.diacenter.org/"], ["zip", "10011.0"], ["phone", "(212) 989 5566"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.752548"], ["updated_at", "2019-02-24 19:31:05.752548"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.3ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.3ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Discovery Times Square Exposition"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Discovery Times Square Exposition"], ["address", "226 W 44th St"], ["coordinate_x", -73.98731863959442], ["coordinate_y", 40.757501085511855], ["url", "http://www.discoverytsx.com/nyc/"], ["zip", "1036.0"], ["phone", "(866) 987-9692"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.762378"], ["updated_at", "2019-02-24 19:31:05.762378"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.3ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Drawing Center"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.7ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Drawing Center"], ["address", "35 Wooster St."], ["coordinate_x", -74.00290417204171], ["coordinate_y", 40.72245118852784], ["url", "http://www.drawingcenter.org/about_visit.cfm"], ["zip", "10013.0"], ["phone", "(212) 219-2166"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.770519"], ["updated_at", "2019-02-24 19:31:05.770519"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Dyckman Farmhouse"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.7ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Dyckman Farmhouse"], ["address", "4881 Broadway"], ["coordinate_x", -73.92383914748758], ["coordinate_y", 40.86713092093551], ["url", "http://www.dyckmanfarmhouse.org/"], ["zip", "10034.0"], ["phone", "(212) 304-9422"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.779648"], ["updated_at", "2019-02-24 19:31:05.779648"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "East Village History Project"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.4ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "East Village History Project"], ["address", "308 Bowery"], ["coordinate_x", -73.99272306225821], ["coordinate_y", 40.72495970416682], ["url", "http://leshp.org/"], ["zip", "10012.0"], ["phone", "(212) 614-8702"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.787507"], ["updated_at", "2019-02-24 19:31:05.787507"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.3ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.4ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "El Museo del Barrio"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.5ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "El Museo del Barrio"], ["address", "1230 Fifth Ave"], ["coordinate_x", -73.95136760111666], ["coordinate_y", 40.793098920789426], ["url", "http://www.elmuseo.org/"], ["zip", "10029.0"], ["phone", "(212) 831-7272"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.798729"], ["updated_at", "2019-02-24 19:31:05.798729"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Ellis Island Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Fraunces Tavern Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Fraunces Tavern Museum"], ["address", "54 Pearl Street"], ["coordinate_x", -74.01133926317924], ["coordinate_y", 40.703399275987856], ["url", "http://www.frauncestavernmuseum.org/"], ["zip", "10004.0"], ["phone", "(212) 425-1778"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.809253"], ["updated_at", "2019-02-24 19:31:05.809253"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Frick Collection"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.6ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Frick Collection"], ["address", "1 E. 70th Street"], ["coordinate_x", -73.96708040539806], ["coordinate_y", 40.77105465350546], ["url", "http://www.frick.org/"], ["zip", "10021.0"], ["phone", "(212) 288-0700"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.815195"], ["updated_at", "2019-02-24 19:31:05.815195"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Staten Island"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Garibaldi-Meucci Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Garibaldi-Meucci Museum"], ["address", "420 Tompkins Avenue"], ["coordinate_x", -74.07387774290744], ["coordinate_y", 40.6151652240151], ["url", "http://statenislandusa.com/pages/garibaldi.html"], ["zip", "10305.0"], ["phone", "(718) 442-1608"], ["borough_id", 2], ["created_at", "2019-02-24 19:31:05.821853"], ["updated_at", "2019-02-24 19:31:05.821853"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Goethe-Institut New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Goethe-Institut New York"], ["address", "1014 Fifth Avenue"], ["coordinate_x", -73.96174204015233], ["coordinate_y", 40.77916564085246], ["url", "http://www.goethe.de/ins/us/ney/deindex.htm"], ["zip", "10028.0"], ["phone", "(212) 439-8700"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.826698"], ["updated_at", "2019-02-24 19:31:05.826698"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Gracie Mansion"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Gracie Mansion"], ["address", "89th Street at East End Avenue"], ["coordinate_x", -73.9430684626868], ["coordinate_y", 40.77611345003038], ["url", "http://www.nyc.gov/html/om/html/gracie.html"], ["zip", "10128.0"], ["phone", "(212)-570-4751"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.832596"], ["updated_at", "2019-02-24 19:31:05.832596"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Bronx"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Hall Of Fame For Great Americans"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Hall Of Fame For Great Americans"], ["address", "Hall of Fame Terrace & Sedgwick Avenue"], ["coordinate_x", -73.91397962918033], ["coordinate_y", 40.85874716978858], ["url", "http://www.bcc.cuny.edu/hallofFame/"], ["zip", "10453.0"], ["phone", "(718) 289-5161"], ["borough_id", 3], ["created_at", "2019-02-24 19:31:05.837236"], ["updated_at", "2019-02-24 19:31:05.837236"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Brooklyn"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Harbor Defense Museum of Fort Hamilton"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Harbor Defense Museum of Fort Hamilton"], ["address", "230 Sheridan Loop"], ["coordinate_x", -74.03231077573365], ["coordinate_y", 40.60900866850688], ["url", "http://www.harbordefensemuseum.com/"], ["zip", "11252.0"], ["phone", "(718) 630-4349"], ["borough_id", 5], ["created_at", "2019-02-24 19:31:05.841710"], ["updated_at", "2019-02-24 19:31:05.841710"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.3ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Hispanic Society of America Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Hispanic Society of America Museum"], ["address", "613 West 155th Street"], ["coordinate_x", -73.94682282230515], ["coordinate_y", 40.833452146758084], ["url", "http://www.hispanicsociety.org/"], ["zip", "10032.0"], ["phone", "(212) 926-2234"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.846844"], ["updated_at", "2019-02-24 19:31:05.846844"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Bronx"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.3ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Holocaust Museum & Studies Center"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Holocaust Museum & Studies Center"], ["address", "75 W 205th St"], ["coordinate_x", -73.89098784384107], ["coordinate_y", 40.87835786499017], ["url", "http://www.holocauststudies.org/"], ["zip", "10468.0"], ["phone", "(718) 817-7700"], ["borough_id", 3], ["created_at", "2019-02-24 19:31:05.854939"], ["updated_at", "2019-02-24 19:31:05.854939"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Brooklyn"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Hudson Waterfront Museum and Showboat Barge"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.4ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Hudson Waterfront Museum and Showboat Barge"], ["address", "290 Conover St."], ["coordinate_x", -74.01808694309555], ["coordinate_y", 40.67557193487433], ["url", "http://www.waterfrontmuseum.org/"], ["zip", "11231.0"], ["phone", "(718) 624-4719"], ["borough_id", 5], ["created_at", "2019-02-24 19:31:05.860429"], ["updated_at", "2019-02-24 19:31:05.860429"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "International Center of Photography"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "International Center of Photography"], ["address", "1133 Avenue Of The Americas"], ["coordinate_x", -73.983836726072], ["coordinate_y", 40.756021151222605], ["url", "http://www.icp.org/"], ["zip", "10036.0"], ["phone", "(212) 857-0000"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.866580"], ["updated_at", "2019-02-24 19:31:05.866580"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Intrepid Sea-Air-Space Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Intrepid Sea-Air-Space Museum"], ["address", "Pier 86 12th Ave. & 46th Street"], ["coordinate_x", -74.0008918064129], ["coordinate_y", 40.764783273941696], ["url", "http://www.intrepidmuseum.org/"], ["zip", "10036.0"], ["phone", "(212) 245-0072"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.871609"], ["updated_at", "2019-02-24 19:31:05.871609"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Long Island City"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mBorough Create (0.2ms)[0m  [1m[32mINSERT INTO "boroughs" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Long Island City"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Isamu Noguchi Garden Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.9ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Isamu Noguchi Garden Museum"], ["address", "32-37 Vernon Boulevard"], ["coordinate_x", -73.93765514503832], ["coordinate_y", 40.76695661305254], ["url", "http://www.noguchi.org/"], ["zip", "11106.0"], ["phone", "(718) 204-7088"], ["borough_id", 6], ["created_at", "2019-02-24 19:31:05.878197"], ["updated_at", "2019-02-24 19:31:05.878197"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Italian American Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.6ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Italian American Museum"], ["address", "155 Mulberry St."], ["coordinate_x", -73.99749410687575], ["coordinate_y", 40.719194628210495], ["url", "http://www.italianamericanmuseum.org/"], ["zip", "10013.0"], ["phone", "(212) 965-9000"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.883798"], ["updated_at", "2019-02-24 19:31:05.883798"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Jackie Robinson Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Jackie Robinson Museum"], ["address", "1 Hudson Square"], ["coordinate_x", -74.00664185516354], ["coordinate_y", 40.72335066225381], ["url", "http://www.jackierobinson.org/"], ["zip", "10013.0"], ["phone", "(212) 290-8600"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.888980"], ["updated_at", "2019-02-24 19:31:05.888980"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Staten Island"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Jacques Marchais Center Museum of Tibetan Art"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.2ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Jacques Marchais Center Museum of Tibetan Art"], ["address", "338 Lighthouse Avenue"], ["coordinate_x", -74.13812336582549], ["coordinate_y", 40.57631283530562], ["url", "http://www.tibetanmuseum.org/"], ["zip", "10306.0"], ["phone", "(718) 987-3500"], ["borough_id", 2], ["created_at", "2019-02-24 19:31:05.893553"], ["updated_at", "2019-02-24 19:31:05.893553"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.7ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Jeffrey's Hook lighthouse (Little Red Lighthouse)"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Jeffrey's Hook lighthouse (Little Red Lighthouse)"], ["address", "178th Street at the Hudson River"], ["coordinate_x", -73.94694494514727], ["coordinate_y", 40.850220034849166], ["url", "http://www.nycgovparks.org/sub_about/parks_divisions/historic_houses/hh_little_red_light.html"], ["zip", "10033.0"], ["phone", "(212) 304-2365"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.899983"], ["updated_at", "2019-02-24 19:31:05.899983"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Jewish Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Jewish Museum"], ["address", "1109 Fifth Ave"], ["coordinate_x", -73.95718705931057], ["coordinate_y", 40.785402256425414], ["url", "http://www.thejewishmuseum.org/index.php"], ["zip", "10128.0"], ["phone", "(212) 423-3200"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.905029"], ["updated_at", "2019-02-24 19:31:05.905029"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "John J. Harvey Fireboat"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "John J. Harvey Fireboat"], ["address", "Pier 66 at West 26th Street"], ["coordinate_x", -74.00965483733572], ["coordinate_y", 40.75233019732761], ["url", "http://www.fireboat.org/"], ["zip", "10001.0"], ["phone", ""], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.910075"], ["updated_at", "2019-02-24 19:31:05.910075"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Queens"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "King Manor Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "King Manor Museum"], ["address", "152-01 Jamaica Avenue"], ["coordinate_x", -73.80376062063522], ["coordinate_y", 40.703042019259755], ["url", "http://www.kingmanor.org/"], ["zip", "11432.0"], ["phone", "(718) 206-0545"], ["borough_id", 4], ["created_at", "2019-02-24 19:31:05.915116"], ["updated_at", "2019-02-24 19:31:05.915116"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Queens"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Kingsland Homestead"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Kingsland Homestead"], ["address", "143-35 37th Avenue"], ["coordinate_x", -73.82415641889934], ["coordinate_y", 40.763595705057114], ["url", "http://www.queenshistoricalsociety.org/kingsland.html"], ["zip", "11354.0"], ["phone", "(718) 206-0545"], ["borough_id", 4], ["created_at", "2019-02-24 19:31:05.920447"], ["updated_at", "2019-02-24 19:31:05.920447"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Queens"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "LaGuardia and Wagner Archives"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.4ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "LaGuardia and Wagner Archives"], ["address", "31-10 Thomson Ave."], ["coordinate_x", -73.93514567999574], ["coordinate_y", 40.74396007246262], ["url", "http://www.laguardiawagnerarchive.lagcc.cuny.edu/defaultc.htm"], ["zip", "11101.0"], ["phone", "(718) 482-5065"], ["borough_id", 4], ["created_at", "2019-02-24 19:31:05.925282"], ["updated_at", "2019-02-24 19:31:05.925282"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Lee Young Hee Museum of Korean Culture"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.4ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Lee Young Hee Museum of Korean Culture"], ["address", "2 West 32nd Street"], ["coordinate_x", -73.98618833058292], ["coordinate_y", 40.74719709497243], ["url", "http://www.lyhkm.org/"], ["zip", "10001.0"], ["phone", "(212) 560-0722"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.931022"], ["updated_at", "2019-02-24 19:31:05.931022"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Brooklyn"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Lefferts Historic House"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Lefferts Historic House"], ["address", "Prospect Park Willink Entrance"], ["coordinate_x", -73.96381416125242], ["coordinate_y", 40.66437995594988], ["url", "http://www.prospectpark.org/visit/places/lefferts"], ["zip", "11215.0"], ["phone", "(718) 789-2822"], ["borough_id", 5], ["created_at", "2019-02-24 19:31:05.936150"], ["updated_at", "2019-02-24 19:31:05.936150"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Madame Tussauds Wax Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Madame Tussauds Wax Museum"], ["address", "234 W. 42nd Street"], ["coordinate_x", -73.98870226140056], ["coordinate_y", 40.75631816305801], ["url", "http://www.madametussauds.com/NewYork/"], ["zip", "10036.0"], ["phone", "(800) 246-8872"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.941206"], ["updated_at", "2019-02-24 19:31:05.941206"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Merchant's House Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Merchant's House Museum"], ["address", "29 East Fourth Street"], ["coordinate_x", -73.99234604790877], ["coordinate_y", 40.72765741724545], ["url", "http://www.merchantshouse.com/"], ["zip", "10003.0"], ["phone", "(212) 777-1089"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.945907"], ["updated_at", "2019-02-24 19:31:05.945907"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.3ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Metropolitan Museum of Art (MET)"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Metropolitan Museum of Art (MET)"], ["address", "1000 Fifth Avenue"], ["coordinate_x", -73.96345111145274], ["coordinate_y", 40.77942354199044], ["url", "http://www.metmuseum.org/"], ["zip", "10028.0"], ["phone", "(212) 535-7710"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.958882"], ["updated_at", "2019-02-24 19:31:05.958882"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.3ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Mexican Cultural Institute of New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Mexican Cultural Institute of New York"], ["address", "27 E. 39th St."], ["coordinate_x", -73.97988117952895], ["coordinate_y", 40.75078436678353], ["url", "http://www.lavitrina.com/"], ["zip", "10016.0"], ["phone", "(212) 217-6422"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.965839"], ["updated_at", "2019-02-24 19:31:05.965839"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Morgan Library and Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Morgan Library and Museum"], ["address", "225 Madison Avenue"], ["coordinate_x", -73.98132148561602], ["coordinate_y", 40.74929507249673], ["url", "http://www.themorgan.org/home.asp"], ["zip", "10016.0"], ["phone", "(212) 685-0008"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.970549"], ["updated_at", "2019-02-24 19:31:05.970549"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.3ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Morris-Jumel Mansion"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Morris-Jumel Mansion"], ["address", "65 Jumel Terrace"], ["coordinate_x", -73.93857438792728], ["coordinate_y", 40.834447679265466], ["url", "http://www.morrisjumel.org/"], ["zip", "10032.0"], ["phone", "(212) 923-8008"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.976125"], ["updated_at", "2019-02-24 19:31:05.976125"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.9ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Mount Vernon Hotel Museum & Garden"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Mount Vernon Hotel Museum & Garden"], ["address", "421 East 61 Street"], ["coordinate_x", -73.95971082928116], ["coordinate_y", 40.76052578447419], ["url", "http://www.mvhm.org/"], ["zip", "10021.0"], ["phone", "(212) 838-6878"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.983068"], ["updated_at", "2019-02-24 19:31:05.983068"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Municipal Art Society"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Municipal Art Society"], ["address", "457 Madison Avenue"], ["coordinate_x", -73.97499987035063], ["coordinate_y", 40.75824830530754], ["url", "http://mas.org/"], ["zip", "10022.0"], ["phone", "(212) 935-3960"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:05.987345"], ["updated_at", "2019-02-24 19:31:05.987345"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Queens"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Museum for African Art"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.2ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Museum for African Art"], ["address", "36-01 43rd Avenue"], ["coordinate_x", -73.92822391104288], ["coordinate_y", 40.74634173827231], ["url", "http://www.africanart.org/"], ["zip", "11101.0"], ["phone", "(718) 784-7700"], ["borough_id", 4], ["created_at", "2019-02-24 19:31:05.992296"], ["updated_at", "2019-02-24 19:31:05.992296"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Museum of American Finance"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Museum of American Finance"], ["address", "48 Wall Street"], ["coordinate_x", -74.00912160394257], ["coordinate_y", 40.706484588627994], ["url", "http://www.moaf.org/index"], ["zip", "10005.0"], ["phone", "(212) 908-4110"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.016076"], ["updated_at", "2019-02-24 19:31:06.016076"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Museum of American Illustration"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Museum of American Illustration"], ["address", "128 E. 63d St."], ["coordinate_x", -73.96690030997947], ["coordinate_y", 40.76471562244387], ["url", "http://societyillustrators.org/museum/index.cms"], ["zip", "10021.0"], ["phone", "(212) 838-2560"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.020963"], ["updated_at", "2019-02-24 19:31:06.020963"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Museum of Arts & Design (MAD)"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.4ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Museum of Arts & Design (MAD)"], ["address", "2 Columbus Circle"], ["coordinate_x", -73.98200725142944], ["coordinate_y", 40.76740607395742], ["url", "http://www.madmuseum.org/"], ["zip", "10019.0"], ["phone", "(212) 299-7777"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.025700"], ["updated_at", "2019-02-24 19:31:06.025700"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.3ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Museum of Biblical Art"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Museum of Biblical Art"], ["address", "1865 Broadway"], ["coordinate_x", -73.98272584235525], ["coordinate_y", 40.77025240986238], ["url", "http://www.mobia.org/"], ["zip", "10023.0"], ["phone", "(212) 408-1200"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.032369"], ["updated_at", "2019-02-24 19:31:06.032369"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Museum Of Chinese In America"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.4ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Museum Of Chinese In America"], ["address", "215 Centre Street"], ["coordinate_x", -73.99919191942232], ["coordinate_y", 40.71945394633874], ["url", "http://www.mocanyc.org/"], ["zip", "10013.0"], ["phone", "(212) 619-4785"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.037154"], ["updated_at", "2019-02-24 19:31:06.037154"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Museum of Comic and Cartoon Art (MoCCA)"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.2ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Museum of Comic and Cartoon Art (MoCCA)"], ["address", "594 Broadway"], ["coordinate_x", -73.99670247583494], ["coordinate_y", 40.7247979456424], ["url", "http://www.moccany.org/"], ["zip", "10012.0"], ["phone", "(212) 254 3511"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.041742"], ["updated_at", "2019-02-24 19:31:06.041742"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Brooklyn"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.3ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Museum of Contemporary African Diasporan Arts (MoCADA)"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Museum of Contemporary African Diasporan Arts (MoCADA)"], ["address", "80 Hanson Place"], ["coordinate_x", -73.97442477664784], ["coordinate_y", 40.68524514383062], ["url", "http://www.mocada.org/"], ["zip", "11217.0"], ["phone", "(718) 230-0492"], ["borough_id", 5], ["created_at", "2019-02-24 19:31:06.047316"], ["updated_at", "2019-02-24 19:31:06.047316"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.4ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Museum of Jewish Heritage"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Museum of Jewish Heritage"], ["address", "36 Battery Place"], ["coordinate_x", -74.01858571588612], ["coordinate_y", 40.705986647371226], ["url", "http://www.mjhnyc.org/index.htm"], ["zip", "10280.0"], ["phone", "(646) 437-4200"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.055114"], ["updated_at", "2019-02-24 19:31:06.055114"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Museum of Modern Art (MoMA)"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.5ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Museum of Modern Art (MoMA)"], ["address", "11 West 53rd Street"], ["coordinate_x", -73.97700363152086], ["coordinate_y", 40.76118664102449], ["url", "http://www.moma.org/"], ["zip", "10019.0"], ["phone", "(212) 708-9400"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.059684"], ["updated_at", "2019-02-24 19:31:06.059684"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Museum of the City of New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.2ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Museum of the City of New York"], ["address", "1220 Fifth Avenue"], ["coordinate_x", -73.95191697462884], ["coordinate_y", 40.792509034510005], ["url", "http://www.mcny.org"], ["zip", "10029.0"], ["phone", "(212) 534-1672"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.066573"], ["updated_at", "2019-02-24 19:31:06.066573"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.3ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Queens"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Museum of the Moving Image"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Museum of the Moving Image"], ["address", "35 Avenue at 36 Street"], ["coordinate_x", -73.92451017252192], ["coordinate_y", 40.75694448741239], ["url", "http://www.movingimage.us/site/site.php"], ["zip", "11106.0"], ["phone", "(718) 784-4520"], ["borough_id", 4], ["created_at", "2019-02-24 19:31:06.071609"], ["updated_at", "2019-02-24 19:31:06.071609"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "National Academy Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.4ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "National Academy Museum"], ["address", "1083 5th Avenue"], ["coordinate_x", -73.95849177369215], ["coordinate_y", 40.78361316720407], ["url", "https://nationalacademy.org/index.asp"], ["zip", "10128.0"], ["phone", "(212) 369-4880"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.076075"], ["updated_at", "2019-02-24 19:31:06.076075"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Staten Island"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "National Lighthouse Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.4ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "National Lighthouse Museum"], ["address", "1 Lighthouse Plaza"], ["coordinate_x", -74.07373713057605], ["coordinate_y", 40.64094901557986], ["url", "http://statenislandusa.com/pages/lighthouse.html"], ["zip", "10301.0"], ["phone", "(718) 556-1681"], ["borough_id", 2], ["created_at", "2019-02-24 19:31:06.082092"], ["updated_at", "2019-02-24 19:31:06.082092"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "National Museum of the American Indian"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "National Museum of the American Indian"], ["address", "1 Bowling Green"], ["coordinate_x", -74.01372704598201], ["coordinate_y", 40.704321256986034], ["url", "http://www.nmai.si.edu/"], ["zip", "10004.0"], ["phone", "(212) 514-3700"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.087247"], ["updated_at", "2019-02-24 19:31:06.087247"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "National September 11 Memorial & Museum at the World Trade Center"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "National September 11 Memorial & Museum at the World Trade Center"], ["address", "1 Liberty Plaza"], ["coordinate_x", -74.01091566131102], ["coordinate_y", 40.70965448747792], ["url", "http://www.911memorial.org/"], ["zip", "10006.0"], ["phone", "(212) 227-7722"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.094438"], ["updated_at", "2019-02-24 19:31:06.094438"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.3ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Neue Galerie New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Neue Galerie New York"], ["address", "1048 Fifth Avenue"], ["coordinate_x", -73.96024812606315], ["coordinate_y", 40.78124233583781], ["url", "http://www.neuegalerie.org/"], ["zip", "10028.0"], ["phone", "(212) 628-6200"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.102206"], ["updated_at", "2019-02-24 19:31:06.102206"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "New Museum of Contemporary Art"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.4ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "New Museum of Contemporary Art"], ["address", "235 Bowery"], ["coordinate_x", -73.99283879250072], ["coordinate_y", 40.722346701845474], ["url", "http://www.newmuseum.org/"], ["zip", "10002.0"], ["phone", "(212) 219-1222"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.107329"], ["updated_at", "2019-02-24 19:31:06.107329"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.9ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "New York City Fire Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "New York City Fire Museum"], ["address", "278 Spring Street"], ["coordinate_x", -74.00693426094169], ["coordinate_y", 40.72557180583998], ["url", "http://www.nycfiremuseum.org/"], ["zip", "10012.0"], ["phone", "(212) 691-1303"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.115489"], ["updated_at", "2019-02-24 19:31:06.115489"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "New York City Police Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "New York City Police Museum"], ["address", "100 Old Slip"], ["coordinate_x", -74.00811754401903], ["coordinate_y", 40.70347829082743], ["url", "http://www.nycpolicemuseum.org/"], ["zip", "10038.0"], ["phone", "(212) 480-3100"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.121122"], ["updated_at", "2019-02-24 19:31:06.121122"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Queens"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "New York Hall of Science"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.4ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "New York Hall of Science"], ["address", "47-01 111th Street"], ["coordinate_x", -73.85168679568561], ["coordinate_y", 40.74714778785817], ["url", "http://www.nysci.org/"], ["zip", "11368.0"], ["phone", "(718) 699-0005"], ["borough_id", 4], ["created_at", "2019-02-24 19:31:06.126843"], ["updated_at", "2019-02-24 19:31:06.126843"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "New York Historical Society"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "New York Historical Society"], ["address", "2 West 77th Street"], ["coordinate_x", -73.97425753844574], ["coordinate_y", 40.77927324139346], ["url", "https://www.nyhistory.org/web/"], ["zip", "10024.0"], ["phone", "(212) 873-3400"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.133257"], ["updated_at", "2019-02-24 19:31:06.133257"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "New York Tolerance Center"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "New York Tolerance Center"], ["address", "50 E 42nd St"], ["coordinate_x", -73.9791241123914], ["coordinate_y", 40.752422920262084], ["url", "http://www.kintera.org/site/pp.asp?c=fwLYKnN8LzH&b=242506"], ["zip", "10017.0"], ["phone", "(212) 697-1180"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.138184"], ["updated_at", "2019-02-24 19:31:06.138184"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Brooklyn"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "New York Transit Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Nicholas Roerich Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.8ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Nicholas Roerich Museum"], ["address", "319 West 107 Street"], ["coordinate_x", -73.96902249723335], ["coordinate_y", 40.802913999614184], ["url", "http://www.roerich.org/"], ["zip", "10025.0"], ["phone", "(212) 864-7752"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.148699"], ["updated_at", "2019-02-24 19:31:06.148699"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Staten Island"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Noble Maritime Collection"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.9ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Noble Maritime Collection"], ["address", "1000 Richmond Terrace"], ["coordinate_x", -74.10177203630597], ["coordinate_y", 40.64431194442387], ["url", "http://www.noblemaritime.org/"], ["zip", "10301.0"], ["phone", "(718) 447-6490"], ["borough_id", 2], ["created_at", "2019-02-24 19:31:06.157028"], ["updated_at", "2019-02-24 19:31:06.157028"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Brooklyn"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Old Stone House"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.4ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Old Stone House"], ["address", "326 5th Avenue"], ["coordinate_x", -73.98461861468387], ["coordinate_y", 40.672993473207185], ["url", "http://www.theoldstonehouse.org/"], ["zip", "11215.0"], ["phone", "(718) 768-3195"], ["borough_id", 5], ["created_at", "2019-02-24 19:31:06.163656"], ["updated_at", "2019-02-24 19:31:06.163656"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Queens"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "P.S. 1 Contemporary Art Center"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "P.S. 1 Contemporary Art Center"], ["address", "22-25 Jackson Ave."], ["coordinate_x", -73.94621241792795], ["coordinate_y", 40.74583946863492], ["url", "http://www.ps1.org/"], ["zip", "11101.0"], ["phone", "(718) 784-2084"], ["borough_id", 4], ["created_at", "2019-02-24 19:31:06.168588"], ["updated_at", "2019-02-24 19:31:06.168588"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Paley Center For Media (formerly Museum Of Television & Radio)"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Paley Center For Media (formerly Museum Of Television & Radio)"], ["address", "25 West 52 Street"], ["coordinate_x", -73.9776016138105], ["coordinate_y", 40.76057363859203], ["url", "http://www.paleycenter.org/"], ["zip", "10019.0"], ["phone", "(212) 621-6800"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.172939"], ["updated_at", "2019-02-24 19:31:06.172939"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Jackson Heights"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mBorough Create (0.3ms)[0m  [1m[32mINSERT INTO "boroughs" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Jackson Heights"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Queens Art Museum - Bulova Corporate Center"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Queens Art Museum - Bulova Corporate Center"], ["address", "75-20 Astoria Blvd."], ["coordinate_x", -73.89314845618621], ["coordinate_y", 40.76460725545623], ["url", "http://www.bdg.net/properties/1/"], ["zip", "11386.0"], ["phone", "(516) 624-1910"], ["borough_id", 7], ["created_at", "2019-02-24 19:31:06.180441"], ["updated_at", "2019-02-24 19:31:06.180441"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Queens"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Queens County Farm Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Queens County Farm Museum"], ["address", "73-50 Little Neck Parkway"], ["coordinate_x", -73.72573660861673], ["coordinate_y", 40.74556960429117], ["url", "http://www.queensfarm.org/"], ["zip", "11004.0"], ["phone", "(718) 347-3276"], ["borough_id", 4], ["created_at", "2019-02-24 19:31:06.184803"], ["updated_at", "2019-02-24 19:31:06.184803"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Queens"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Queens Museum of Art"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Queens Museum of Art"], ["address", "Queens Museum of Art"], ["coordinate_x", -73.8467627581779], ["coordinate_y", 40.7458428647494], ["url", "http://www.queensmuseum.org/"], ["zip", "11368.0"], ["phone", "(718) 592-9700"], ["borough_id", 4], ["created_at", "2019-02-24 19:31:06.189164"], ["updated_at", "2019-02-24 19:31:06.189164"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Rose Center for Earth and Space (Hayden Planetarium)"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Rose Center for Earth and Space (Hayden Planetarium)"], ["address", "15 West 81st Street"], ["coordinate_x", -73.97257491067647], ["coordinate_y", 40.78285983221266], ["url", "http://www.haydenplanetarium.org/index.php"], ["zip", "10024.0"], ["phone", "(212) 769-5100"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.193593"], ["updated_at", "2019-02-24 19:31:06.193593"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.3ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Rose Museum at Carnegie Hall"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Rubin Museum of Art"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Rubin Museum of Art"], ["address", "150 West 17th Street"], ["coordinate_x", -73.99779152534921], ["coordinate_y", 40.74002038014153], ["url", "http://www.rmanyc.org/"], ["zip", "10011.0"], ["phone", "(212) 620-5000"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.204175"], ["updated_at", "2019-02-24 19:31:06.204175"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Staten Island"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Sandy Ground Historical Society"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Scandinavia House: The Nordic Center in America"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (1.4ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Scandinavia House: The Nordic Center in America"], ["address", "58 Park Ave."], ["coordinate_x", -73.98008843538526], ["coordinate_y", 40.74944689567966], ["url", "http://www.scandinaviahouse.org/"], ["zip", "10016.0"], ["phone", "(212) 879-9779"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.212361"], ["updated_at", "2019-02-24 19:31:06.212361"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Schomburg Center for Research in Black Culture"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Schomburg Center for Research in Black Culture"], ["address", "515 Malcolm X Boulevard"], ["coordinate_x", -73.94099076053165], ["coordinate_y", 40.814612726277666], ["url", "http://www.nypl.org/research/sc/sc.html"], ["zip", "10037.0"], ["phone", "(212) 491-2200"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.218034"], ["updated_at", "2019-02-24 19:31:06.218034"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "School of Visual Arts Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "School of Visual Arts Museum"], ["address", "209 E. 23rd St."], ["coordinate_x", -73.98224232560065], ["coordinate_y", 40.73875919099525], ["url", "http://www.schoolofvisualarts.edu/sa/index.jsp?sid0=201&page_id=482&event_id=865"], ["zip", "10010.0"], ["phone", "(212) 592-2145"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.222685"], ["updated_at", "2019-02-24 19:31:06.222685"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Staten Island"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Seguine Mansion"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Seguine Mansion"], ["address", "440 Seguine Avenue"], ["coordinate_x", -74.19758929841912], ["coordinate_y", 40.51521434364335], ["url", "http://www.historichousetrust.org/item.php?i_id=38"], ["zip", "10307.0"], ["phone", "(718) 667-6042"], ["borough_id", 2], ["created_at", "2019-02-24 19:31:06.227655"], ["updated_at", "2019-02-24 19:31:06.227655"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Skyscraper Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Skyscraper Museum"], ["address", "39 Battery Place"], ["coordinate_x", -74.01756806833069], ["coordinate_y", 40.70565752977975], ["url", "http://www.skyscraper.org/home.htm"], ["zip", "10280.0"], ["phone", "(212) 968-1961"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.233105"], ["updated_at", "2019-02-24 19:31:06.233105"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Solomon R. Guggenheim Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Solomon R. Guggenheim Museum"], ["address", "1071 Fifth Avenue"], ["coordinate_x", -73.95891102040586], ["coordinate_y", 40.78300947618501], ["url", "http://www.guggenheim.org/"], ["zip", "10128.0"], ["phone", "(212) 423-3500"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.237530"], ["updated_at", "2019-02-24 19:31:06.237530"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Sony Wonder Technology Lab"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.2ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Sony Wonder Technology Lab"], ["address", "550 Madison Ave"], ["coordinate_x", -73.9735078210536], ["coordinate_y", 40.76147030101873], ["url", "http://wondertechlab.sony.com/"], ["zip", "10022.0"], ["phone", "(212) 833-8100"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.241957"], ["updated_at", "2019-02-24 19:31:06.241957"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "South Street Seaport Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "South Street Seaport Museum"], ["address", "12 Fulton Street"], ["coordinate_x", -74.00372094057576], ["coordinate_y", 40.70660335756895], ["url", "http://www.southstreetseaportmuseum.org/"], ["zip", "10038.0"], ["phone", "(212) 748-8600"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.246270"], ["updated_at", "2019-02-24 19:31:06.246270"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Staten Island"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Staten Island Children's Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Staten Island Children's Museum"], ["address", "1000 Richmond Terr."], ["coordinate_x", -74.10189210518134], ["coordinate_y", 40.64270888224811], ["url", "http://www.statenislandkids.org/"], ["zip", "10301.0"], ["phone", "(718) 273-2060"], ["borough_id", 2], ["created_at", "2019-02-24 19:31:06.253664"], ["updated_at", "2019-02-24 19:31:06.253664"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Staten Island"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Staten Island Museum / Staten Island Institute of Arts & Sciences"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Staten Island Museum / Staten Island Institute of Arts & Sciences"], ["address", "75 Stuyvesant Pl."], ["coordinate_x", -74.0776650626922], ["coordinate_y", 40.64436917860095], ["url", "http://www.statenislandmuseum.org/"], ["zip", "10301.0"], ["phone", "(718) 727-1135"], ["borough_id", 2], ["created_at", "2019-02-24 19:31:06.258567"], ["updated_at", "2019-02-24 19:31:06.258567"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Studio Museum in Harlem"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.4ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Studio Museum in Harlem"], ["address", "144 West 125th Street"], ["coordinate_x", -73.94772615470191], ["coordinate_y", 40.808245476168075], ["url", "http://www.studiomuseum.org"], ["zip", "10027.0"], ["phone", "(212) 864-4500"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.263819"], ["updated_at", "2019-02-24 19:31:06.263819"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Tenement Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.4ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Tenement Museum"], ["address", "108 Orchard Street"], ["coordinate_x", -73.98967904824913], ["coordinate_y", 40.718687698398995], ["url", "http://www.tenement.org/"], ["zip", "10002.0"], ["phone", "(212) 431-0233"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.269167"], ["updated_at", "2019-02-24 19:31:06.269167"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "The Freakatorium, El Museo Loco"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "The Freakatorium, El Museo Loco"], ["address", "57 Clinton St."], ["coordinate_x", -73.98501448982452], ["coordinate_y", 40.719616728018636], ["url", "http://www.freakatorium.com/"], ["zip", "10002.0"], ["phone", "(212) 375-0475"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.273891"], ["updated_at", "2019-02-24 19:31:06.273891"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "The Jazz Museum in Harlem"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.4ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "The Jazz Museum in Harlem"], ["address", "104 E. 126th Street"], ["coordinate_x", -73.9380587417615], ["coordinate_y", 40.80527638435791], ["url", "http://www.jazzmuseuminharlem.org/"], ["zip", "10035.0"], ["phone", "(212) 348-8300"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.279204"], ["updated_at", "2019-02-24 19:31:06.279204"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Brooklyn"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "The Jewish Children's Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "The Jewish Children's Museum"], ["address", "792 Eastern Pkwy"], ["coordinate_x", -73.94196177006319], ["coordinate_y", 40.66891157732498], ["url", "http://www.jcmonline.org/"], ["zip", "11213.0"], ["phone", "(718) 467-0600"], ["borough_id", 5], ["created_at", "2019-02-24 19:31:06.284069"], ["updated_at", "2019-02-24 19:31:06.284069"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "The Museum at FIT"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "The Museum at FIT"], ["address", "7th Avenue at West 27th Street"], ["coordinate_x", -73.99392966775832], ["coordinate_y", 40.74700837582729], ["url", "http://www.fitnyc.edu/306.asp"], ["zip", "10001.0"], ["phone", "(212) 217-5800"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.288379"], ["updated_at", "2019-02-24 19:31:06.288379"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Theodore Roosevelt Birthplace"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Theodore Roosevelt Birthplace"], ["address", "28 East 20th Street"], ["coordinate_x", -73.98904085250442], ["coordinate_y", 40.738642014511264], ["url", "http://www.nps.gov/thrb/index.htm"], ["zip", "10003.0"], ["phone", "(212) 260-1616"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.292725"], ["updated_at", "2019-02-24 19:31:06.292725"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.3ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Ukrainian Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Ukrainian Museum"], ["address", "222 East 6th Street"], ["coordinate_x", -73.98975703078781], ["coordinate_y", 40.7276767876997], ["url", "http://www.ukrainianmuseum.org/"], ["zip", "10003.0"], ["phone", "(212) 228-0110"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.297478"], ["updated_at", "2019-02-24 19:31:06.297478"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Bronx"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Valentine-Varian House"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.2ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Valentine-Varian House"], ["address", "3266 Bainbridge Ave."], ["coordinate_x", -73.87942471849595], ["coordinate_y", 40.877379824668694], ["url", "http://www.museumregister.com/US/NewYork/Bronx/ValentineVarianHouse/Info.html"], ["zip", "10467.0"], ["phone", "(718) 881-8900"], ["borough_id", 3], ["created_at", "2019-02-24 19:31:06.302069"], ["updated_at", "2019-02-24 19:31:06.302069"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Bronx"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Van Cortlandt House Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Van Cortlandt House Museum"], ["address", "VAN CRTLANDT MANSION"], ["coordinate_x", -73.89482257025313], ["coordinate_y", 40.89111116729143], ["url", "http://www.vancortlandthouse.org/"], ["zip", "10471.0"], ["phone", "(718) 543-3344"], ["borough_id", 3], ["created_at", "2019-02-24 19:31:06.306417"], ["updated_at", "2019-02-24 19:31:06.306417"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Bronx"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Wave Hill"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Wave Hill"], ["address", "West 249th Street & Independence Avenue"], ["coordinate_x", -73.91165376574718], ["coordinate_y", 40.89788471476036], ["url", "http://wavehill.org/visit/"], ["zip", "10471.0"], ["phone", "(718) 549-3200"], ["borough_id", 3], ["created_at", "2019-02-24 19:31:06.310954"], ["updated_at", "2019-02-24 19:31:06.310954"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Whitney Museum of American Art"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Whitney Museum of American Art"], ["address", "945 Madison Ave."], ["coordinate_x", -73.96383434736195], ["coordinate_y", 40.773407292902185], ["url", "http://www.whitney.org/"], ["zip", "10021.0"], ["phone", "1 (800) WHITNEY"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.315782"], ["updated_at", "2019-02-24 19:31:06.315782"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "Brooklyn"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Wyckoff Farmhouse Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Wyckoff Farmhouse Museum"], ["address", "5816 Clarendon Ave"], ["coordinate_x", -73.92079629906307], ["coordinate_y", 40.644340681393366], ["url", "http://www.wyckoffassociation.org/"], ["zip", "11203.0"], ["phone", "(718) 629-5400"], ["borough_id", 5], ["created_at", "2019-02-24 19:31:06.320137"], ["updated_at", "2019-02-24 19:31:06.320137"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Leo Baeck Institute"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Leo Baeck Institute"], ["address", "15 W. 16th St."], ["coordinate_x", -73.99376449363902], ["coordinate_y", 40.73802754297413], ["url", "http://www.lbi.org/"], ["zip", "10011.0"], ["phone", "(212) 744-6400"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.324840"], ["updated_at", "2019-02-24 19:31:06.324840"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "American Sephardi Federation / Sephardic House"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "American Sephardi Federation / Sephardic House"], ["address", "15 W. 16th St."], ["coordinate_x", -73.99388579658319], ["coordinate_y", 40.73807723317813], ["url", "http://www.americansephardifederation.org/"], ["zip", "10011.0"], ["phone", "(212) 294-8350"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.330354"], ["updated_at", "2019-02-24 19:31:06.330354"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "YIVO Institute for Jewish Research"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "YIVO Institute for Jewish Research"], ["address", "15 W. 16th St."], ["coordinate_x", -73.99379427245329], ["coordinate_y", 40.73795994708654], ["url", "http://www.yivoinstitute.org/"], ["zip", "10011.0"], ["phone", "(212) 246-6860"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.335257"], ["updated_at", "2019-02-24 19:31:06.335257"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "American Jewish Historical Society"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "American Jewish Historical Society"], ["address", "15 W. 16th St."], ["coordinate_x", -73.99392890421056], ["coordinate_y", 40.738015384101416], ["url", "http://www.ajhs.org/"], ["zip", "10011.0"], ["phone", "(212) 294-6160"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.339652"], ["updated_at", "2019-02-24 19:31:06.339652"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.1ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Yeshiva University Museum"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.3ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Yeshiva University Museum"], ["address", "15 W. 16th St."], ["coordinate_x", -73.99381737049632], ["coordinate_y", 40.738045683847], ["url", "http://www.yumuseum.org/"], ["zip", "10011.0"], ["phone", "(212) 294-8330"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.344066"], ["updated_at", "2019-02-24 19:31:06.344066"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."name" = $1 LIMIT $2[0m  [["name", "New York"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mBorough Load (0.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "museums" WHERE "museums"."title" = $1 LIMIT $2[0m  [["title", "Center For Jewish History"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mMuseum Create (0.7ms)[0m  [1m[32mINSERT INTO "museums" ("title", "address", "coordinate_x", "coordinate_y", "url", "zip", "phone", "borough_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Center For Jewish History"], ["address", "15 W. 16th St."], ["coordinate_x", -73.99386877223978], ["coordinate_y", 40.737986764588406], ["url", "http://www.cjh.org"], ["zip", "10011.0"], ["phone", "(212) 294-8301"], ["borough_id", 1], ["created_at", "2019-02-24 19:31:06.350131"], ["updated_at", "2019-02-24 19:31:06.350131"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+Started GET "/" for 127.0.0.1 at 2019-02-24 14:31:18 -0500
+  [1m[35m (6.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/connorcallahan/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+Processing by ApplicationController#welcome as HTML
+  Rendering application/welcome.erb within layouts/application
+  Rendered application/welcome.erb within layouts/application (208.3ms)
+Completed 200 OK in 387ms (Views: 379.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/boroughs" for 127.0.0.1 at 2019-02-24 14:31:22 -0500
+Processing by BoroughsController#index as HTML
+  Rendering boroughs/index.html.erb within layouts/application
+  [1m[36mBorough Load (0.7ms)[0m  [1m[34mSELECT "boroughs".* FROM "boroughs"[0m
+  ↳ app/views/boroughs/index.html.erb:4
+  Rendered boroughs/index.html.erb within layouts/application (33.1ms)
+Completed 200 OK in 126ms (Views: 79.8ms | ActiveRecord: 20.7ms)
+
+
