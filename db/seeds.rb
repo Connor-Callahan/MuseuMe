@@ -13,6 +13,7 @@ require 'byebug'
 
 
 def seed_museum_data
+  byebug
   museum_data_string = RestClient.get("https://data.cityofnewyork.us/resource/fn6f-htvy.json")
   museum_data_hash = JSON.parse(museum_data_string)
   museum_data_hash.each do |key|

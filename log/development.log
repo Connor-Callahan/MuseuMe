@@ -20400,3 +20400,89 @@ Processing by MuseumsController#show as HTML
 Completed 200 OK in 36ms (Views: 32.2ms | ActiveRecord: 0.6ms)
 
 
+  [1m[35m (7.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/connorcallahan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mMuseum Load (0.7ms)[0m  [1m[34mSELECT  "museums".* FROM "museums" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mBorough Load (0.4ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2019-02-24 15:07:22 -0500
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/connorcallahan/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+Processing by ApplicationController#welcome as HTML
+  Rendering application/welcome.erb within layouts/application
+  Rendered application/welcome.erb within layouts/application (1447.5ms)
+Completed 200 OK in 1881ms (Views: 1752.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/boroughs" for 127.0.0.1 at 2019-02-24 15:07:31 -0500
+Processing by BoroughsController#index as HTML
+  Rendering boroughs/index.html.erb within layouts/application
+  [1m[36mBorough Load (1.8ms)[0m  [1m[34mSELECT "boroughs".* FROM "boroughs"[0m
+  ↳ app/views/boroughs/index.html.erb:4
+  Rendered boroughs/index.html.erb within layouts/application (55.0ms)
+Completed 200 OK in 191ms (Views: 133.3ms | ActiveRecord: 44.2ms)
+
+
+Started GET "/boroughs/3" for 127.0.0.1 at 2019-02-24 15:07:33 -0500
+Processing by BoroughsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBorough Load (2.2ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/boroughs_controller.rb:8
+  Rendering boroughs/show.html.erb within layouts/application
+  [1m[36mMuseum Load (1.2ms)[0m  [1m[34mSELECT "museums".* FROM "museums" WHERE "museums"."borough_id" = $1[0m  [["borough_id", 3]]
+  ↳ app/views/boroughs/show.html.erb:5
+  Rendered boroughs/show.html.erb within layouts/application (40.7ms)
+Completed 200 OK in 129ms (Views: 87.1ms | ActiveRecord: 22.2ms)
+
+
+Started GET "/museums/14" for 127.0.0.1 at 2019-02-24 15:07:42 -0500
+Processing by MuseumsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mMuseum Load (0.4ms)[0m  [1m[34mSELECT  "museums".* FROM "museums" WHERE "museums"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/museums_controller.rb:24
+  Rendering museums/show.erb within layouts/application
+  Rendered museums/show.erb within layouts/application (1.7ms)
+Completed 200 OK in 55ms (Views: 49.8ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (11.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/connorcallahan/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Started GET "/" for 127.0.0.1 at 2019-04-04 11:11:03 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/connorcallahan/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+Processing by ApplicationController#welcome as HTML
+  Rendering application/welcome.erb within layouts/application
+  Rendered application/welcome.erb within layouts/application (244.4ms)
+Completed 200 OK in 319ms (Views: 311.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/boroughs" for 127.0.0.1 at 2019-04-04 11:11:07 -0400
+Processing by BoroughsController#index as HTML
+  Rendering boroughs/index.html.erb within layouts/application
+  [1m[36mBorough Load (24.4ms)[0m  [1m[34mSELECT "boroughs".* FROM "boroughs"[0m
+  ↳ app/views/boroughs/index.html.erb:4
+  Rendered boroughs/index.html.erb within layouts/application (81.5ms)
+Completed 200 OK in 187ms (Views: 102.5ms | ActiveRecord: 66.7ms)
+
+
+Started GET "/boroughs/4" for 127.0.0.1 at 2019-04-04 11:11:09 -0400
+Processing by BoroughsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBorough Load (30.3ms)[0m  [1m[34mSELECT  "boroughs".* FROM "boroughs" WHERE "boroughs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/boroughs_controller.rb:8
+  Rendering boroughs/show.html.erb within layouts/application
+  [1m[36mMuseum Load (22.7ms)[0m  [1m[34mSELECT "museums".* FROM "museums" WHERE "museums"."borough_id" = $1[0m  [["borough_id", 4]]
+  ↳ app/views/boroughs/show.html.erb:5
+  Rendered boroughs/show.html.erb within layouts/application (48.1ms)
+Completed 200 OK in 211ms (Views: 124.3ms | ActiveRecord: 58.0ms)
+
+
+Started GET "/museums/52" for 127.0.0.1 at 2019-04-04 11:11:10 -0400
+Processing by MuseumsController#show as HTML
+  Parameters: {"id"=>"52"}
+  [1m[36mMuseum Load (0.4ms)[0m  [1m[34mSELECT  "museums".* FROM "museums" WHERE "museums"."id" = $1 LIMIT $2[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/controllers/museums_controller.rb:24
+  Rendering museums/show.erb within layouts/application
+  Rendered museums/show.erb within layouts/application (4.2ms)
+Completed 200 OK in 49ms (Views: 41.0ms | ActiveRecord: 0.4ms)
+
+
